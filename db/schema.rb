@@ -17,17 +17,11 @@ ActiveRecord::Schema.define(version: 20160130181207) do
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
-    t.integer  "section_id",  null: false
     t.string   "title",       null: false
     t.string   "description", null: false
+    t.string   "section",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "sections", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
