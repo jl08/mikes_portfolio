@@ -1,6 +1,14 @@
 class HomeController < ApplicationController
   def index
-    @sections = Section.all
   end
+
+  def about
+  end
+
+  def application
+    @posts = Post.all
+  end
+
+
 
 end

@@ -8,7 +8,20 @@
 </head>
 <body>
 
+  <header>
+    <p class="main-title">Mikes Portfolio</p>
+
+  </header>
+
+  <div class="nav-bar">
+    <%= link_to "about",about_path, class: "nav-links" %>
+    <%= link_to "contact", contact_path, class: "nav-links" %>
+    <%= link_to "application", "#", class: "nav-links" %>
+    <%= link_to "artwork", "#", class: "nav-links" %>
+  </div>
 <%= yield %>
+
+  <footer>made by mike</footer>
 
 </body>
 </html>
