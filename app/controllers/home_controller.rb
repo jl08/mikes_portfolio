@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+
   end
 
   def about
@@ -8,13 +9,13 @@ class HomeController < ApplicationController
 
   def application
     @projects = Project.where(section: "application")
-    @post = @projects.first
+    @post = @projects.first.posts.first
     render 'posts/show'
   end
 
   def artwork
       @projects = Project.where(section: "artwork")
-      @post = @projects.first
+      @post = @projects.first.posts.first
       render 'posts/show'
   end
 

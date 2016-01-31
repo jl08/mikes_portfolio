@@ -10,11 +10,11 @@
       <%= link_to "contact", contact_path, class: "nav-links" %>
     </div>
     <div class="sub-nav-bar">
-    <% if @posts %>
+    <% if @projects %>
 
       <div class="projects-holder">
         <% @projects.each do |project| %>
-        <p class="project-link"><%= link_to project.title, post %></p>
+        <p class="project-link"><%= link_to project.name, project_post_path(project, project.posts.first) %></p>
         <% end %>
       </div>
 

@@ -2,7 +2,9 @@
 
 
 <div class="actions">
-  <%= f.label :title %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "name" %>
+  <%= f.label :section %>
   <%= f.select :section, ["application","artwork"] %>
   <%= f.submit %>
 

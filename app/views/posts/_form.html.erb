@@ -10,7 +10,7 @@
 </div>
 <% end %>
 
-<%= form_for @post, url: posts_path, html: { multipart: true } do |f| %>
+<%= form_for @post, url: "/projects/#{@project.id}/posts", html: { multipart: true } do |f| %>
 
 
 <div class="actions">
@@ -20,8 +20,6 @@
   <%= f.text_area :description, size: "10x10" %>
   <%= f.label :image %>
   <%= f.file_field :image %>
-  <%= f.label :section %>
-  <%= f.select :section, ["application","artwork"] %>
   <%= f.submit %>
 
 </div>

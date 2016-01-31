@@ -7,28 +7,24 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
-  def show
-    @post = Post.find_by(id: params[:id])
-    @posts = Post.where(section: @post.section)
-  end
+
 
   def next
     current_post = Post.find_by(id: params[:id])
-    @posts = Post.where(section: current_post.section)
+    @posts = Post.where(project_id: current_post.project.id)
     positions = @posts
     if positions.index(current_post) == positions.length - 1
       next_post = 0
     else
       next_post = positions.index(current_post) + 1
     end
-    redirect_to post_path(positions[next_post])
+    redirect_to project_post_path(current_post.project,positions[next_post])
   end
 
 
   # GET /posts/new
   def new
+    @project = Project.find_by(id: params[:project_id])
     @post = Post.new
   end
 
@@ -39,11 +35,10 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
-
+    @post = Project.find_by(id: params[:project_id]).posts.build(post_params)
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to project_post_path(@post.project,@post), notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -52,6 +47,12 @@ class PostsController < ApplicationController
     end
   end
 
+  # GET /posts/1
+  # GET /posts/1.json
+  def show
+    @post = Post.find_by(id: params[:id])
+    @projects = Project.where(section: @post.project.section)
+  end
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
@@ -84,6 +85,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :image, :section)
+      params.require(:post).permit(:title, :description, :image)
     end
 end
