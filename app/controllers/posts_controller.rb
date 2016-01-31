@@ -52,7 +52,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by(id: params[:id])
     @projects = Project.where(section: @post.project.section)
-    @posts = Post.where(project_id: @post.project.id)
+    @project = Project.find_by(id: params[:project_id])
   end
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
