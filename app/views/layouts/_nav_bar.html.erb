@@ -1,0 +1,25 @@
+  <div class="nav-holder">
+    <header>
+    <p class="main-title">Mikes Portfolio</p>
+
+  </header>
+    <div class="nav-bar">
+      <%= link_to "about",about_path, class: "nav-links" %>
+      <%= link_to "application", application_path, class: "nav-links" %>
+      <%= link_to "artwork", artwork_path, class: "nav-links" %>
+      <%= link_to "contact", contact_path, class: "nav-links" %>
+    </div>
+    <div class="sub-nav-bar">
+    <% if @posts %>
+
+      <div class="projects-holder">
+        <% @projects.each do |project| %>
+        <p class="project-link"><%= link_to project.title, post %></p>
+        <% end %>
+      </div>
+
+    <% end %>
+    <%= link_to 'New Project', new_project_path, id: "new-project-link" %>
+    </div>
+
+  </div>

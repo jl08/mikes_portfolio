@@ -10,7 +10,22 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find_by(id: params[:id])
+    @posts = Post.where(section: @post.section)
   end
+
+  def next
+    current_post = Post.find_by(id: params[:id])
+    @posts = Post.where(section: current_post.section)
+    positions = @posts
+    if positions.index(current_post) == positions.length - 1
+      next_post = 0
+    else
+      next_post = positions.index(current_post) + 1
+    end
+    redirect_to post_path(positions[next_post])
+  end
+
 
   # GET /posts/new
   def new

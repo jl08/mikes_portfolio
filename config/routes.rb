@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :posts
 
+  resources :projects do
+    resources :posts
+  end
   get '/about' => "home#about"
   get '/application' => "home#application"
   get '/artwork' => "home#artwork"
   get '/contact' => "home#contact"
 
+
+  get '/posts/:id/next' => "posts#next", as: :next
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

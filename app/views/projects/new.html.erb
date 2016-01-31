@@ -1,0 +1,10 @@
+<%= form_for @project do |f| %>
+
+
+<div class="actions">
+  <%= f.label :title %>
+  <%= f.select :section, ["application","artwork"] %>
+  <%= f.submit %>
+
+</div>
+<% end %>

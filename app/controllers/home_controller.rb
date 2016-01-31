@@ -7,13 +7,15 @@ class HomeController < ApplicationController
   end
 
   def application
-    @posts = Post.where(section: "application")
-    render 'posts/index'
+    @projects = Project.where(section: "application")
+    @post = @projects.first
+    render 'posts/show'
   end
 
   def artwork
-      @posts = Post.where(section: "artwork")
-      render 'posts/index'
+      @projects = Project.where(section: "artwork")
+      @post = @projects.first
+      render 'posts/show'
   end
 
   def contact

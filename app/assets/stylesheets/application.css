@@ -13,3 +13,77 @@
  *= require_tree .
  *= require_self
  */
+
+.main-title {
+
+  font-family: "Times New Roman";
+  letter-spacing: 2px;
+  font-size: 1em;
+}
+
+div.nav-holder {
+  margin: 1em;
+  display: inline;
+  width: 200px;
+  position: fixed;
+}
+.nav-bar {
+  margin-left: 1em;
+  float: left;
+  display: block;
+
+}
+.sub-nav-bar {
+  display: block;
+}
+.nav-links {
+  display: block;
+}
+.page-title {
+  font-family: arial;
+  letter-spacing: 2px;
+  font-size: 1em;
+}
+
+p.post-description {
+  font-family: arial;
+  letter-spacing: 1px;
+  font-size: .75em;
+}
+
+.project-link {
+  margin-bottom: -3px;
+  margin-top: -3px;
+}
+
+.project-link a {
+  font-family: arial;
+  font-size: .8em;
+  letter-spacing: 0px;
+  display: block;
+}
+
+.projects-holder {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  margin-left: 1em;
+  clear: left;
+}
+
+.content-holder {
+  margin-left: 300px;
+  padding: 1em;
+
+}
+
+p.post-title {
+  font-size: .9em;
+  font-style: italic;
+  color: #C0C0C0;
+  letter-spacing: 1px;
+}
+
+#new-project-link {
+  clear: left;
+  display: block;
+}
