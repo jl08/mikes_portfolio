@@ -4,20 +4,20 @@
 
   </header>
     <div class="nav-bar">
-      <%= link_to "about",about_path, class: "nav-links" %>
-      <%= link_to "application", application_path, class: "nav-links" %>
-      <%= link_to "artwork", artwork_path, class: "nav-links" %>
-      <%= link_to "contact", contact_path, class: "nav-links" %>
+      <%= link_to "about",about_path %>
+      <%= link_to "application", application_path %>
+      <%= link_to "artwork", artwork_path %>
+      <%= link_to "contact", contact_path %>
     </div>
     <div class="sub-nav-bar">
     <% if @projects %>
-
-      <div class="projects-holder">
-        <% @projects.each do |project| %>
-        <p class="project-link"><%= link_to project.name, project_post_path(project, project.posts.first) %></p>
-        <% end %>
-      </div>
-
+      <% if @projects.first.posts != [] %>
+        <div class="projects-holder">
+          <% @projects.each do |project| %>
+          <p class="project-link"><%= link_to project.name, project_post_path(project, project.posts.first) %></p>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
     <%= link_to 'New Project', new_project_path, id: "new-project-link" %>
     </div>
