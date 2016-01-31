@@ -173,7 +173,7 @@ DEPENDENCIES
   font-awesome-rails (~> 4.5.0)
   jbuilder (~> 2.0)
   jquery-rails
-  paperclip (~> 4.3)
+  paperclip
   pg
   rails (= 4.2.4)
   rails_12factor
