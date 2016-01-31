@@ -1,14 +1,17 @@
 <% if @post %>
 <p id="notice"><%= notice %></p>
-  <div class="image-holder">
-    <%= image_tag @post.image.url(:medium) %>
-  </div>
+<div class="image-holder">
+  <%= image_tag @post.image.url(:medium) %>
+</div>
+<% @posts.each do |post| %>
+<p class="dot-buttons"><%= link_to "", project_post_path(post.project, post) , class: "fa fa-circle", id: "post#{post.id}" %></p>
+<% end %>
 <p class="post-title"><%= @post.title %></p>
 <p class="post-description"><%= @post.description %></p>
-<%= link_to "", next_path(@post), class: "fa fa-circle" %>
+
+<% else %>
+<p class="post-description">Under Construction</p>
+
+<% end %>
 <%= link_to 'Edit', edit_project_post_path(@post.project,@post) %>
 <%= link_to "add work", new_project_post_path(@post.project) %>
-<% else %>
-<p class="post-description">something went wrong</p>
-<% end %>
-
