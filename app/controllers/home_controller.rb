@@ -6,22 +6,19 @@ class HomeController < ApplicationController
   end
 
   def about
-    @avatar =
     render :about
   end
 
   def application
-    @projects = Project.where(section: "application")
-    @project = @projects.first
-    @post = @project.posts.first
-    render 'posts/show'
+    projects = Project.where(section: "application")
+    project = projects.first
+    redirect_to project_path(project)
   end
 
   def artwork
-      @projects = Project.where(section: "artwork")
-      @project = @projects.first
-      @post = @project.posts.first
-      render 'posts/show'
+    projects = Project.where(section: "artwork")
+    project = projects.first
+    redirect_to project_path(project)
   end
 
   def contact

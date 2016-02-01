@@ -1,17 +1,18 @@
+<% if @project %>
+  <% if @post %>
+    <p id="notice"><%= notice %></p>
+    <div class="image-holder">
+      <%= image_tag @post.image.url(:big) %>
+    </div>
+    <p class="post-title"><%= @post.title %></p>
+    <p class="post-description"><%= @post.description %></p>
+    <% @project.posts.each do |post| %>
+      <p class="dot-buttons"><%= link_to "", project_post_path(@project, post) , class: "fa fa-circle" %></p>
+    <% end %>
+    <%= link_to 'Edit', edit_project_post_path(@project,@post) %>
+  <% end %>
+  <%= link_to "add work", new_project_post_path(@project) %>
+  <% else %>
+  <p class="post-description">Under Construction</p>
 
-<% if @post %>
-<p id="notice"><%= notice %></p>
-  <div class="image-holder">
-    <%= image_tag @post.image.url(:medium) %>
-  </div>
-<p class="post-title"><%= @post.title %></p>
-<p class="post-description"><%= @post.description %></p>
-<%= link_to "", next_path(@post), class: "fa fa-circle" %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
-
-
-
-<% else %>
-<%= link_to "add work", new_project_post_path(@project) %>
 <% end %>
