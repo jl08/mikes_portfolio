@@ -23,8 +23,9 @@
 
         <div class="projects-holder">
           <% @section.projects.each do |project| %>
-
+          <% if project.title != "avatar" %>
           <p class="project-link"><%= link_to project.title, project_path(project) %></p>
+          <% end %>
           <% end %>
         </div>
 
