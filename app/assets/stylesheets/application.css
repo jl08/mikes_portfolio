@@ -108,7 +108,7 @@ p.post-title {
 #new-project-link {
   clear: left;
   display: block;
-  margin-left: 1em;
+  margin-left: 1.5em;
   text-transform: uppercase;
   font-size: .75em;
 }
@@ -137,7 +137,7 @@ p.post-title {
   height: 100%;
 }
 
-a.current {
+.active {
   color: #282828;
 }
 
