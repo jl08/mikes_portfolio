@@ -11,18 +11,20 @@
 
   </header>
     <div class="nav-bar">
-      <%= link_to "about",about_path %>
-      <%= link_to "application", application_path %>
-      <%= link_to "artwork", artwork_path %>
-      <%= link_to "contact", contact_path %>
+      <% if @sections %>
+      <% @sections.each do |section| %>
+        <%= link_to section.title, section_path(section) %>
+      <% end %>
+      <% end %>
+      <%= link_to "Create Section", new_section_path %>
     </div>
     <div class="sub-nav-bar">
-    <% if @projects %>
+    <% if @section %>
 
         <div class="projects-holder">
-          <% @projects.each do |project| %>
+          <% @section.projects.each do |project| %>
 
-          <p class="project-link"><%= link_to project.name, project_post_path(project, project.posts.first) %></p>
+          <p class="project-link"><%= link_to project.title, project_path(project) %></p>
           <% end %>
         </div>
 

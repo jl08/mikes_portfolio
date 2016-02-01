@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :set_logo
+  before_action :set_logo, :set_sections
 
   # GET /posts
   # GET /posts.json
@@ -94,4 +94,9 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :description, :image)
     end
+
+    def set_sections
+      @sections = Section.all
+    end
+
 end

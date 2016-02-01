@@ -1,8 +1,8 @@
 class CreateProjects < ActiveRecord::Migration
   def change
     create_table :projects do |t|
-      t.string :name, null: false
-      t.string :section
+      t.string :title, null: false
+      t.references :section, null: false
 
       t.timestamps null: false
     end

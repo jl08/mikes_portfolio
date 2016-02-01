@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
-  root 'home#index'
-
+  root 'sections#index'
+  resources :sections
   resources :projects do
     resources :posts
   end
-  get '/about' => "home#about"
-  get '/application' => "home#application"
-  get '/artwork' => "home#artwork"
-  get '/contact' => "home#contact"
+
 
 
   get '/posts/:id/next' => "posts#next", as: :next

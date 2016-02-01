@@ -2,10 +2,10 @@
 
 
 <div class="actions">
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder: "name" %>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: "title" %>
   <%= f.label :section %>
-  <%= f.select :section, ["application","artwork", "about"] %>
+  <%= f.collection_select(:section_id, @sections, :id, :title) %>
   <%= f.submit %>
 
 </div>

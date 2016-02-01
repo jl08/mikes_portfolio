@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_logo
+  before_action :set_logo, :set_sections
 
   def index
   end
@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find_by(id: params[:id])
-    @projects = Project.where(section: @project.section)
+    @section = @project.section
     @post = @project.posts.first
   end
 
@@ -28,11 +28,15 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :section)
+    params.require(:project).permit(:title, :section_id)
   end
 
   def set_logo
     @avatar = Post.find_by(title: "avatar")
+  end
+
+  def set_sections
+    @sections = Section.all
   end
 
 end
