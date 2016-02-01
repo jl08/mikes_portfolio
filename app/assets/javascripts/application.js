@@ -21,4 +21,8 @@ $(document).ready(function() {
       $(this).addClass("current");
     }
   });
+
+  $("body").on("click", "a", function() {
+    $(this).css('color','#C0C0C0');
+  });
 });

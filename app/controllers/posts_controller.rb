@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_logo
 
   # GET /posts
   # GET /posts.json
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @project = Project.find_by(id: params[:project_id])
   end
 
   # POST /posts
@@ -59,7 +61,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to project_post_path(@post.project,@post), notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -82,6 +84,10 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def set_logo
+      @avatar = Post.find_by(title: "avatar")
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

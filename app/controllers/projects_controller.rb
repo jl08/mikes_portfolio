@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_action :set_logo
 
   def index
   end
@@ -27,6 +28,10 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:name, :section)
+  end
+
+  def set_logo
+    @avatar = Post.find_by(title: "avatar")
   end
 
 end

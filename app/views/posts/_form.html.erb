@@ -10,7 +10,7 @@
 </div>
 <% end %>
 
-<%= form_for @post, url: "/projects/#{@project.id}/posts", html: { multipart: true } do |f| %>
+<%= form_for @post, url: "/projects/#{@project.id}/posts/#{@post.id}", html: { multipart: true } do |f| %>
 
 
 <div class="actions">

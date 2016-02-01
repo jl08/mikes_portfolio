@@ -1,6 +1,13 @@
   <div class="nav-holder">
     <header>
-    <p class="main-title">Mikes Portfolio</p>
+
+    <div class="logo-holder">
+      <% if @avatar %>
+      <%= image_tag @avatar.image.url(:thumb) %>
+      <% else %>
+      <p class="logo-title">Mike Lee</p>
+      <% end %>
+    </div>
 
   </header>
     <div class="nav-bar">
