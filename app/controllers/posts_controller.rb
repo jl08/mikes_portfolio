@@ -53,6 +53,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @project = Project.find_by(id: params[:project_id])
+    @section = @project.section
     @post = Post.find_by(id: params[:id])
   end
   # PATCH/PUT /posts/1
