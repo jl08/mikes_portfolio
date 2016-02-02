@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 $(document).ready(function() {
@@ -22,7 +21,7 @@ $(document).ready(function() {
     }
   });
 
-  $("body").on("click", "a", function() {
-    $(this).css('color','#C0C0C0');
-  });
+  // $("body").on("click", "a", function() {
+  //   $(this).css('color','#C0C0C0');
+  // });
 });
