@@ -1,0 +1,27 @@
+<% if @project %>
+  <% if @post %>
+    <p id="notice"><%= notice %></p>
+    <div class="image-holder">
+      <%= image_tag @post.image.url(:big) %>
+    </div>
+    <p class="post-title"><%= @post.title %></p>
+    <p class="post-description"><%= @post.description %></p>
+    <% if @project.section.title != "about" %>
+    <% @project.posts.each do |post| %>
+    <% if @post == post %>
+     <p class="dot-buttons" id="active-dot"><%= link_to "", project_post_path(@project, post) , class: "fa fa-circle", id: "dot-link" %></p>
+     <% else %>
+      <p class="dot-buttons"><%= link_to "", project_post_path(@project, post) , class: "fa fa-circle", id: "dot-link" %></p>
+    <% end %>
+    <% end %>
+    <% end %>
+    <%= link_to 'Edit', edit_project_post_path(@project,@post) %>
+    <%= link_to "Delete Post", project_post_path(@project,@post), method: :delete %>
+  <% end %>
+  <%= link_to "add work", new_project_post_path(@project) %>
+  <%= link_to "Delete Project", "/projects/#{@project.id}", method: :delete %>
+  <% else %>
+  <p class="post-description">Under Construction</p>
+
+<% end %>
+

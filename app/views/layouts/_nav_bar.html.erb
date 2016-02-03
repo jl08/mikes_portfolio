@@ -18,7 +18,7 @@
           <% if @section == section && section.title != "about" %>
           <div class="projects-holder">
             <% section.projects.each do |project| %>
-            <p class="project-link"><%= link_to project.title, project_path(project) %></p>
+            <%= link_to project.title, project_path(project), class: "project-link" %>
             <% end %>
           </div>
           <% end %>

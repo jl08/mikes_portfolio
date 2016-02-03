@@ -21,6 +21,19 @@ $(document).ready(function() {
     }
   });
 
+  $(".content-holder").on("click", "#dot-link", function(event) {
+    event.preventDefault();
+    var path = $(event.target).attr("href");
+    $.ajax({
+      url: path,
+      method: "get"
+    }).done(function(data) {
+      $(".content-holder").html(data);
+      console.log(data);
+    }).fail(function() {
+      console.log("failed ajax!");
+    });
+  })
   // $(".nav-bar").on("click", ".nav-bar-links", function(event) {
   //   event.preventDefault();
   //   var id = $(event.target).attr("id");

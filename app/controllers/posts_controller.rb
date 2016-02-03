@@ -8,21 +8,6 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-
-
-  def next
-    current_post = Post.find_by(id: params[:id])
-    @posts = Post.where(project_id: current_post.project.id)
-    positions = @posts
-    if positions.index(current_post) == positions.length - 1
-      next_post = 0
-    else
-      next_post = positions.index(current_post) + 1
-    end
-    redirect_to project_post_path(current_post.project,positions[next_post])
-  end
-
-
   # GET /posts/new
   def new
     @project = Project.find_by(id: params[:project_id])
@@ -55,6 +40,7 @@ class PostsController < ApplicationController
     @project = Project.find_by(id: params[:project_id])
     @section = @project.section
     @post = Post.find_by(id: params[:id])
+    render partial: "single_post", layout: false
   end
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
@@ -75,7 +61,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
