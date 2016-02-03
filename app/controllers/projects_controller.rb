@@ -24,7 +24,11 @@ class ProjectsController < ApplicationController
     render "posts/show"
   end
 
-
+  def destroy
+    project = Project.find_by(id: params[:id])
+    project.destroy
+    redirect_to root_path
+  end
 
   private
 
