@@ -1,2 +1,17 @@
 <p class="page-title">about me</p>
 <p class="post-description">paragraph about me goes here</p>
+
+<%= form_for @post, html: { multipart: true } do |f| %>
+
+
+<div class="actions">
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: "title" %>
+  <%= f.label :description %>
+  <%= f.text_area :description, size: "10x10" %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+  <%= f.submit %>
+
+</div>
+<% end %>

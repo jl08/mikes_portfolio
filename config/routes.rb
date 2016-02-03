@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'sections#index'
+  get '/about' => 'sections#about', as: :about
   resources :sections
   resources :projects do
     resources :posts

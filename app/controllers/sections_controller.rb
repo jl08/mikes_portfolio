@@ -22,7 +22,13 @@ class SectionsController < ApplicationController
   # end
 
   def show
-    @section = Section.find_by(id: params[:id])
+    section = Section.find_by(id: params[:id])
+    if !section.projects.nil?
+      @project = section.projects.first
+      if @project
+        @post = @project.posts.first
+      end
+    end
   end
 
 

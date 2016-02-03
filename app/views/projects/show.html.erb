@@ -10,8 +10,10 @@
       <p class="dot-buttons"><%= link_to "", project_post_path(@project, post) , class: "fa fa-circle" %></p>
     <% end %>
     <%= link_to 'Edit', edit_project_post_path(@project,@post) %>
+
   <% end %>
-  <%= link_to "add work", new_project_post_path(@project) %>
+   <%= link_to "add work", new_project_post_path(@project) %>
+
   <% else %>
   <p class="post-description">Under Construction</p>
 
