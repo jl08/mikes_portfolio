@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-@import url('http://fonts.googleapis.com/css?family=Crimson+Text')
+@import url('http://fonts.googleapis.com/css?family=Crimson+Text');
 
 div.logo-holder {
   height: 100px;
@@ -50,10 +50,7 @@ div.nav-holder {
   margin-bottom: 1em;
 
 }
-.sub-nav-bar {
-/*  display: none;*/
 
-}
 .nav-bar a {
   display: block;
   margin-bottom: -5px;
