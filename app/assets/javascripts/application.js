@@ -21,6 +21,12 @@ $(document).ready(function() {
     }
   });
 
+  // $(".nav-bar").on("click", ".nav-bar-links", function(event) {
+  //   event.preventDefault();
+  //   var id = $(event.target).attr("id");
+  //   $("#sub-nav" + id).slideToggle();
+  // })
+
   // $("body").on("click", "a", function() {
   //   $(this).css('color','#C0C0C0');
   // });

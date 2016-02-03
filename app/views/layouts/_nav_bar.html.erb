@@ -13,22 +13,21 @@
     <div class="nav-bar">
       <% if @sections %>
       <% @sections.each do |section| %>
-        <%= link_to section.title, section_path(section) %>
-      <% end %>
-      <% end %>
-      <%= link_to "Create Section", new_section_path %>
-    </div>
-    <div class="sub-nav-bar">
-    <% if @section && @section.title != "about" %>
-
-        <div class="projects-holder">
-          <% @section.projects.each do |project| %>
-          <p class="project-link"><%= link_to project.title, project_path(project) %></p>
+        <%= link_to section.title, section_path(section), class: "nav-bar-links", id: section.id %>
+        <div class="sub-nav-bar" id="sub-nav<%= section.id %>">
+          <% if @section == section && section.title != "about" %>
+          <div class="projects-holder">
+            <% section.projects.each do |project| %>
+            <p class="project-link"><%= link_to project.title, project_path(project) %></p>
+            <% end %>
+          </div>
           <% end %>
         </div>
-
-    <% end %>
-    <%= link_to 'New Project', new_project_path, id: "new-project-link" %>
+      <% end %>
+      <% end %>
+      <%= link_to 'New Project', new_project_path, id: "new-project-link" %>
+      <%= link_to "Create Section", new_section_path %>
     </div>
+
 
   </div>

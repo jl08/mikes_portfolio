@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+@import url('http://fonts.googleapis.com/css?family=Crimson+Text')
 
 div.logo-holder {
   height: 100px;
@@ -51,12 +51,16 @@ div.nav-holder {
 
 }
 .sub-nav-bar {
-  display: block;
+/*  display: none;*/
 
 }
 .nav-bar a {
   display: block;
   margin-bottom: -5px;
+  font-family: "Crimson Text";
+  letter-spacing: .5px;
+  font-size: .9em;
+  text-transform: capitalize;
 }
 .page-title {
   font-family: arial;
@@ -73,8 +77,8 @@ p.post-description {
 }
 
 .project-link {
-  margin-bottom: -3px;
-  margin-top: -3px;
+  margin-bottom: -7.5px;
+  margin-top: -7.5px;
 }
 
 .project-link a {
@@ -82,12 +86,20 @@ p.post-description {
   font-size: .8em;
   letter-spacing: 0px;
   display: block;
+  color: #8A8A8A;
+}
+
+.project-link a:hover {
+  font-family: arial;
+  font-size: .8em;
+  letter-spacing: 0px;
+  display: block;
+  color: #C0C0C0;
 }
 
 .projects-holder {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   clear: left;
 }
 
@@ -108,7 +120,7 @@ p.post-title {
 #new-project-link {
   clear: left;
   display: block;
-  margin-left: 1.5em;
+
   text-transform: uppercase;
   font-size: .75em;
 }
@@ -138,9 +150,9 @@ p.post-title {
 }
 
 .active {
-  color: #282828;
+  color: #8A8A8A;
 }
 
 a:active {
-  color: #282828;
+  color: #8A8A8A;
 }
