@@ -6,8 +6,10 @@
     </div>
     <p class="post-title"><%= @post.title %></p>
     <p class="post-description"><%= @post.description %></p>
+    <% if @project.section.title != "about" %>
     <% @project.posts.each do |post| %>
       <p class="dot-buttons"><%= link_to "", project_post_path(@project, post) , class: "fa fa-circle" %></p>
+    <% end %>
     <% end %>
     <%= link_to 'Edit', edit_project_post_path(@project,@post) %>
   <% end %>

@@ -29,6 +29,7 @@ class SectionsController < ApplicationController
         @post = @project.posts.first
       end
     end
+    render "posts/show"
   end
 
 

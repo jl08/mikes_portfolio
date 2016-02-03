@@ -21,6 +21,7 @@ class ProjectsController < ApplicationController
     @project = Project.find_by(id: params[:id])
     @section = @project.section
     @post = @project.posts.first
+    render "posts/show"
   end
 
 
