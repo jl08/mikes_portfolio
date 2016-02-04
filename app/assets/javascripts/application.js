@@ -28,7 +28,7 @@ $(document).ready(function() {
       url: path,
       method: "get"
     }).done(function(data) {
-      $(".content-holder").html(data);
+      $(".content-holder").hide().html(data).fadeIn();
       console.log(data);
     }).fail(function() {
       console.log("failed ajax!");
