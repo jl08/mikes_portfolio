@@ -3,7 +3,7 @@
 
     <div class="logo-holder">
       <% if @avatar %>
-      <%= image_tag @avatar.image.url(:thumb) %>
+      <%= link_to image_tag(@avatar.image.url(:thumb)), root_path %>
       <% else %>
       <p class="logo-title">Mike Lee</p>
       <% end %>
