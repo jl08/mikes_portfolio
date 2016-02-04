@@ -17,9 +17,10 @@ class SectionsController < ApplicationController
     end
   end
 
-  # def about
-  #   render :about
-  # end
+  def about
+    @post = Post.find_by(title: "about")
+    render :about
+  end
 
   def show
     @section = Section.find_by(id: params[:id])

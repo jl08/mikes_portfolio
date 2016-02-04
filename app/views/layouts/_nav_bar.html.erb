@@ -12,8 +12,11 @@
   </header>
     <div class="nav-bar">
       <% if @sections %>
+      <%= link_to "About", about_path, class: "nav-bar-links" %>
       <% @sections.each do |section| %>
+        <% if section.title != "about" %>
         <%= link_to section.title, section_path(section), class: "nav-bar-links", id: section.id %>
+        <% end %>
         <div class="sub-nav-bar" id="sub-nav<%= section.id %>">
           <% if @section == section && section.title != "about" %>
           <div class="projects-holder">

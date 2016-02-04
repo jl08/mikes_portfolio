@@ -1,17 +1,9 @@
-<p class="page-title">about me</p>
-<p class="post-description">paragraph about me goes here</p>
 
-<%= form_for @post, html: { multipart: true } do |f| %>
-
-
-<div class="actions">
-  <%= f.label :title %>
-  <%= f.text_field :title, placeholder: "title" %>
-  <%= f.label :description %>
-  <%= f.text_area :description, size: "10x10" %>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-  <%= f.submit %>
-
-</div>
-<% end %>
+  <% if @post %>
+    <p id="notice"><%= notice %></p>
+    <div class="image-holder">
+      <%= image_tag(@post.image.url(:big), class: "image") %>
+    </div>
+    <%= link_to 'Edit', edit_project_post_path(@post.project,@post) %>
+    <%= link_to "Delete Post", project_post_path(@post.project,@post), method: :delete %>
+  <% end %>
