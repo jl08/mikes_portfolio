@@ -18,7 +18,7 @@ class SectionsController < ApplicationController
   end
 
   def about
-    @post = Post.find_by(title: "about")
+    @post = Post.find_by(title: "All About Me")
     render :about
   end
 
