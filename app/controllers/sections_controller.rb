@@ -33,9 +33,10 @@ class SectionsController < ApplicationController
   end
 
 
-  # def contact
-  #   render :contact
-  # end
+  def contact
+    @post = Post.find_by(title: "contact")
+    render :contact
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

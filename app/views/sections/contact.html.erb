@@ -1,2 +1,9 @@
 <p class="page-title">contact me</p>
-<p class="post-description">other stuff</p>
+
+<% if @post %>
+<div class="image-holder" id="contact-image">
+  <%= image_tag @post.image.url(:big) %>
+</div>
+<% else %>
+<p class="post-description">under construction</p>
+<% end %>
