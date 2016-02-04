@@ -38,6 +38,15 @@ class SectionsController < ApplicationController
     render :contact
   end
 
+  def destroy
+    section = Section.find_by(id: params[:id])
+    section.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Section was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_logo

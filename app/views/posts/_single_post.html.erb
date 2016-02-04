@@ -22,6 +22,7 @@
   <%= link_to "Delete Project", "/projects/#{@project.id}", method: :delete %>
   <% else %>
   <p class="post-description">Under Construction</p>
+  <%= link_to "Delete section", "/sections/#{@section.id}", method: :delete %>
 
 <% end %>
 
