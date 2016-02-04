@@ -1,9 +1,14 @@
-<p class="page-title">contact me</p>
-
 <% if @post %>
 <div class="image-holder" id="contact-image">
+  <p id="copywrite-text"><i class="fa fa-copyright"></i> 2014-2016 Michael Lee. All Rights Reserved.</p>
   <%= image_tag @post.image.url(:big) %>
+  <div id="contact-info">
+    <i class="fa fa-phone fa-fw" id="phone-icon"></i><p id="phone-number"> + 267 968 0037</p>
+    <i class="fa fa-envelope fa-fw"></i><p><%= mail_to "myke@mykelee.com", "myke@mykelee.com" %></p>
+    <i class="fa fa-instagram fa-fw"></i><p id="instagram-link"><%= link_to "maikerulea", "http://www.instagram.com/maikerulea" %></p>
+  </div>
 </div>
+
 <% else %>
 <p class="post-description">under construction</p>
 <% end %>

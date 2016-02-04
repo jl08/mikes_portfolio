@@ -59,6 +59,16 @@ div.nav-holder {
   font-size: .95em;
   text-transform: capitalize;
 }
+
+p#copywrite-text {
+  font-family: Arial;
+  font-size: .8em;
+  position: absolute;
+  color: #fff;
+  margin-top: 505px;
+  margin-left: 290px;
+
+}
 .page-title {
   font-family: arial;
   letter-spacing: 2px;
@@ -159,3 +169,53 @@ a:active {
 #active-dot a {
   color: #000;
 }
+#contact-image {
+  width: 700px;
+}
+#contact-image img {
+  display: inline;
+
+
+}
+
+div#contact-info {
+  background-color: #2F2F2F;
+  float: right;
+  margin-left: 1em;
+  width: 149px;
+  height: 515px;
+  padding-top: 10px;
+
+}
+
+#contact-info p {
+  color: #fff;
+  font-family: Arial;
+  font-size: .85em;
+  display: inline;
+  padding-left: 1em;
+
+}
+
+#contact-info a {
+  color: #fff;
+  font-family: Arial;
+  font-size: .85em;
+}
+
+#contact-info a:hover {
+  color: #C0C0C0;
+}
+
+#contact-info i {
+
+  color: #fff;
+  display: inline;
+  padding-left: 1em;
+
+}
+
+p#instagram-link {
+  margin-left: 2px;
+}
+
