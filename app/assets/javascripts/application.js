@@ -15,6 +15,14 @@
 //= require_tree .
 
 $(document).ready(function() {
+
+  $('.image').hide();
+  $('.image').each( function(){
+    $(this).on('load', function () {
+        $(this).fadeIn();
+    });
+  });
+
   $("a").each(function() {
     if ($(this).prop("href") == window.location.href) {
       $(this).addClass("active");
