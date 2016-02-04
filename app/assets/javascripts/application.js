@@ -33,6 +33,19 @@ $(document).ready(function() {
     }).fail(function() {
       console.log("failed ajax!");
     });
+  });
+
+  $(".content-holder").on("click", "#next-image-link", function(event) {
+    event.preventDefault();
+    var path = $(event.target).parent().attr("href");
+    $.ajax({
+      url: path,
+      method: "get"
+    }).done(function(data) {
+      $(".content-holder").hide().html(data).fadeIn();
+    }).fail(function() {
+      console.log("failed ajax!");
+    })
   })
   // $(".nav-bar").on("click", ".nav-bar-links", function(event) {
   //   event.preventDefault();

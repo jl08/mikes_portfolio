@@ -2,7 +2,7 @@
   <% if @post %>
     <p id="notice"><%= notice %></p>
     <div class="image-holder">
-      <%= image_tag @post.image.url(:big) %>
+      <a href="/next/<%= @post.id %>" id="next-image-link"><%= image_tag(@post.image.url(:big)) %></a>
     </div>
     <p class="post-title"><%= @post.title %></p>
     <p class="post-description"><%= @post.description %></p>

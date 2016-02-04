@@ -44,6 +44,23 @@ class PostsController < ApplicationController
   end
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
+
+  def next
+    current_post = Post.find_by(id: params[:id])
+    @posts = Post.where(project_id: current_post.project.id)
+    positions = @posts
+    if positions.index(current_post) == positions.length - 1
+      next_post = 0
+    else
+      next_post = positions.index(current_post) + 1
+    end
+    @project = current_post.project
+    @section = @project.section
+    @post = positions[next_post]
+    # redirect_to project_post_path(current_post.project,positions[next_post])
+    render partial: "single_post", layout: false
+   end
+
   def update
     respond_to do |format|
       if @post.update(post_params)
