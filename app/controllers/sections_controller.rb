@@ -2,6 +2,8 @@ class SectionsController < ApplicationController
   before_action :set_logo, :set_sections
 
   def index
+    @post = Post.find_by(title: "home")
+    render :index
   end
 
   def new
