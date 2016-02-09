@@ -15,11 +15,7 @@
     <% end %>
     <% end %>
     <% end %>
-    <%= link_to 'Edit', edit_project_post_path(@project,@post) %>
-    <%= link_to "Delete Post", project_post_path(@project,@post), method: :delete %>
   <% end %>
-  <%= link_to "add work", new_project_post_path(@project) %>
-  <%= link_to "Delete Project", "/projects/#{@project.id}", method: :delete %>
   <% else %>
   <p class="post-description">Under Construction</p>
   <%= link_to "Delete section", "/sections/#{@section.id}", method: :delete %>

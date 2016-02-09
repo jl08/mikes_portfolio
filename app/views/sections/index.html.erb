@@ -4,6 +4,4 @@
 <div class="image-holder">
   <%= image_tag(@post.image.url(:big), class: "image") %>
 </div>
-<%= link_to 'Edit', edit_project_post_path(@post.project,@post) %>
-<%= link_to "Delete Post", project_post_path(@post.project,@post), method: :delete %>
 <% end %>
